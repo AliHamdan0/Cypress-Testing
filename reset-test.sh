@@ -1,0 +1,1 @@
+cp -r src/__tests__/mockData/*.json src/__tests__/dn
