@@ -1,9 +1,9 @@
 import Tods from "../../../../cypress/db/todos.json";
 export default async function OrderID({ params }: { params: { orderId: string } }) {
   let data = null;
-  if (process.env.APP_ENV === "test") data = Tods;
+  if (process.env.APP_ENV === "test" || process.env.NODE_ENV === "test") data = Tods;
   else {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/todos`);
+    const res = await fetch(`${process.env.DB_PATH}/todos`);
     data = await res.json();
   }
   return (
