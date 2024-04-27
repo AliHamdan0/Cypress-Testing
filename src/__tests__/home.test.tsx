@@ -17,8 +17,8 @@ test("test client component with intercepted api", async () => {
 });
 
 test("test dynamic page with dynamic params in MSW", async () => {
-  const serverComponent = await OrderID({ params: { orderId: "3" } });
+  const serverComponent = await OrderID({ params: { orderId: "1" } });
   render(serverComponent);
-  const orderNum = await screen.findByText(/Order id : 3/i);
+  const orderNum = await screen.findByText(/Order id : 1/i);
   expect(orderNum).toBeInTheDocument();
 });

@@ -6,8 +6,8 @@
     "db:reset": "sh reset-test.sh",
     "dev": "next dev",
     "build": "next build",
-    "build:test": "npm run db:reset && export NODE_ENV=\"test\" && next build",
-    "start:test": "export NODE_ENV=\"test\" && next start",
+    "build:test": "npm run db:reset && set APP_ENV=test&& set NODE_ENV=test&& next build",
+    "start:test": "set APP_ENV=test&& set NODE_ENV=test&& next start",
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
@@ -24,6 +24,7 @@
     "undici": "^5.28.4"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^10.0.1",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.2",
     "@types/jest": "^29.5.12",

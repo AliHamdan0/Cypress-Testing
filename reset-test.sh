@@ -1,1 +1,1 @@
-cp -r src/__tests__/mockData/*.json src/__tests__/dn
+cp -r cypress/mockData/*.json cypress/db
