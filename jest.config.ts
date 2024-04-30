@@ -13,6 +13,8 @@ const config: Config = {
   verbose: true,
   setupFiles: ["./jest.polyfills.js"],
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  // to prevent non-test files from being interpreted as test files
+  testRegex: "/__tests__/.*/.*\\.test\\.[jt]sx?$",
   testEnvironmentOptions: {
     customExportConditions: [""],
   },

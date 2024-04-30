@@ -1,11 +1,13 @@
 import { defineConfig } from "cypress";
 import { resetDB } from "./cypress/mockData/reset-db";
+import { addOrder } from "./cypress/mockData/test-utils";
 
 export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       on("task", {
         "db:reset": () => resetDB().then(() => null),
+        addOrder: () => addOrder({ id: "12345", title: "delectus aut autem" }).then(() => null),
       });
     },
     baseUrl: "http://localhost:3000",

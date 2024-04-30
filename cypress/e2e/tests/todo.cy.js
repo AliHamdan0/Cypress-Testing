@@ -25,8 +25,18 @@ describe("example to-do app", () => {
   // });
 
   it("test an existed dynamic page", () => {
-    cy.task("db:reset").visit("/order/1");
+    cy.task("db:reset").visit("/order/0");
     cy.findByRole("heading", { name: /delectus aut autem/i }).should("exist");
+  });
+
+  it("test unexcited dynamic page ", () => {
+    cy.task("db:reset").visit("/order/12345", { failOnStatusCode: false });
+    cy.contains("404").should("exist");
+  });
+
+  it("test existed after build dynamic page ", () => {
+    cy.task("db:reset").task("addOrder").visit("/order/197");
+    cy.contains("quis eius est sint explicabo").should("exist");
   });
 
   it("Find Home link", () => {

@@ -14,7 +14,8 @@
     "test:watch": "jest --watch",
     "cypress:open": "env-cmd -f .env.test.local cypress open",
     "cypress:start": "start-server-and-test 'npm run start:test' 3000 'npm run cypress:open'",
-    "cypress:build": "npm run build:test && npm run cypress:start"
+    "cypress:build": "npm run build:test && npm run cypress:start",
+    "cypress:run": "start-server-and-test 'npm run start:test' 3000 'env-cmd -f .env.test.local cypress run'"
   },
   "dependencies": {
     "next": "^14.2.3",
@@ -24,6 +25,7 @@
     "undici": "^5.28.4"
   },
   "devDependencies": {
+    "@opentelemetry/api": "^1.8.0",
     "@testing-library/cypress": "^10.0.1",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.2",
