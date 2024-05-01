@@ -14,5 +14,7 @@ export default defineConfig({
   },
   env: {
     DB_PATH: "./src/__tests__/db",
+    CYPRESS_USER_NAME: "ali@hamdan.com",
+    CYPRESS_PASSWORD: "123",
   },
 });
